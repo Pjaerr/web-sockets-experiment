@@ -1,3 +1,4 @@
-const io = require('socket.io-client');
+import io from 'socket.io-client';
 
-const socket = new io('localhost:3000');
+
+const socket = io();

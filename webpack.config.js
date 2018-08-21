@@ -8,10 +8,10 @@ module.exports =
         {
             entry: __dirname + '\\src\\main.js'
         },
-        devtool: 'inline-source-map',
+        devtool: 'source-map',
         output:
         {
-            path: __dirname + "/build",
+            path: __dirname + "/build/static/",
             filename: 'bundle.js'
         },
     }
