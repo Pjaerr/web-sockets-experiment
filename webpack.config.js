@@ -6,7 +6,7 @@ module.exports =
         mode: 'development',
         entry:
         {
-            entry: __dirname + '\\src\\main.js'
+            entry: __dirname + '\\Game.js'
         },
         devtool: 'source-map',
         output:
@@ -14,4 +14,18 @@ module.exports =
             path: __dirname + "/build/static/",
             filename: 'bundle.js'
         },
+        module: {
+            rules: [
+                {
+                    test: /\.js$/,
+                    exclude: /(node_modules|bower_components)/,
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env']
+                        }
+                    }
+                }
+            ]
+        }
     }

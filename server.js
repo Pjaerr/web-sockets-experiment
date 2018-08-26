@@ -1,13 +1,12 @@
-//Import Dependencies
 const express = require('express');
-
 const app = express();
 
 const http = require('http').Server(app);
 
+const path = require('path');
+
 const io = require('socket.io')(http);
 
-const path = require('path');
 
 app.get('/', (req, res) =>
 {
@@ -26,3 +25,5 @@ io.on('connection', socket =>
 });
 
 http.listen(3030, () => console.log("Server listening on port 3030"));
+
+const Paint = require('./src/components/Paint/Server_Paint.js')(io);
