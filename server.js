@@ -7,7 +7,6 @@ const path = require('path');
 
 const io = require('socket.io')(http);
 
-
 app.get('/', (req, res) =>
 {
     app.use(express.static(path.join(__dirname, '/build')));
@@ -24,6 +23,9 @@ io.on('connection', socket =>
     });
 });
 
+
+
 http.listen(3030, () => console.log("Server listening on port 3030"));
 
+// Import serverside components
 const Paint = require('./src/components/Paint/Server_Paint.js')(io);

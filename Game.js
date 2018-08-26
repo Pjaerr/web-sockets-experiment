@@ -1,16 +1,9 @@
-import { socket } from './client.js';
 import { draw } from './src/components/Paint/Client_Paint.js';
-
-function update(timeElapsed)
-{
-
-}
 
 function render()
 {
     draw();
 }
-
 
 //Game Loop
 
@@ -22,10 +15,7 @@ function game_loop(timestamp)
 
     let timeElapsed = (timestamp - previous) / 1000;  //Work out the elapsed time.
 
-    update(timeElapsed); //Update the game based on elapsed time.
-
     render();	//Renders the game.
-
 
     previous = timestamp;  //set the previous timestamp ready for next time
     requestAnimationFrame(game_loop); //Recursively calls the game loop every animation frame when the browser is ready.
